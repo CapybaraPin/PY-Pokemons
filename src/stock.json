@@ -1,0 +1,218 @@
+{
+  "app_name": "Pokemon",
+  "favicon_path": "src/img/favicon.png",
+
+
+  "pokemons": [
+    {
+      "id": 0,
+      "name": "Chenipan",
+      "pv": 50,
+      "type": "Terre",
+      "attack_damage": 20,
+      "image_path": "src/img/pokemon/chenipan.png",
+      "sound_path": "src/sounds/chenipan.mp3",
+      "color": "green"
+    },
+    {
+      "id": 1,
+      "name": "Paras",
+      "pv": 60,
+      "type": "Terre",
+      "attack_damage": 30,
+      "image_path": "src/img/pokemon/paras.png",
+      "sound_path": "src/sounds/paras.mp3",
+      "color": "green"
+    },
+    {
+      "id": 2,
+      "name": "Scarabrute",
+      "pv": 110,
+      "type": "Terre",
+      "attack_damage": 50,
+      "image_path": "src/img/pokemon/scarabrute.png",
+      "sound_path": "src/sounds/Scarabrute.mp3",
+      "color": "green"
+    },
+    {
+      "id": 3,
+      "name": "Arakdo",
+      "pv": 50,
+      "type": "Terre",
+      "attack_damage": 10,
+      "image_path": "src/img/pokemon/arakdo.png",
+      "sound_path": "src/sounds/arakdo.mp3",
+      "color": "green"
+    },
+    {
+      "id": 4,
+      "name": "Brindibou",
+      "pv": 60,
+      "type": "Terre",
+      "attack_damage": 20,
+      "image_path": "src/img/pokemon/brindibou.png",
+      "sound_path": "src/sounds/brindibou.mp3",
+      "color": "green"
+    },
+    {
+      "id": 5,
+      "name": "Archeduc",
+      "pv": 140,
+      "type": "Terre",
+      "attack_damage": 20,
+      "image_path": "src/img/pokemon/archeduc.png",
+      "sound_path": "src/sounds/archeduc.mp3",
+      "color": "green"
+    },
+    {
+      "id": 6,
+      "name": "Larvibule",
+      "pv": 70,
+      "type": "Terre",
+      "attack_damage": 20,
+      "image_path": "src/img/pokemon/larvibule.png",
+      "sound_path": "src/sounds/larvibule.mp3",
+      "color": "green"
+    },
+    {
+      "id": 7,
+      "name": "Mimantis",
+      "pv": 60,
+      "type": "Terre",
+      "attack_damage": 20,
+      "image_path": "src/img/pokemon/mimantis.png",
+      "sound_path": "src/sounds/mimantis.mp3",
+      "color": "green"
+    },
+    {
+      "id": 8,
+      "name": "Croquine",
+      "pv": 60,
+      "type": "Terre",
+      "attack_damage": 10,
+      "image_path": "src/img/pokemon/croquine.png",
+      "sound_path": "src/sounds/croquine.mp3",
+      "color": "green"
+    },
+    {
+      "id": 9,
+      "name": "Caninos",
+      "pv": 80,
+      "type": "Feu",
+      "attack_damage": 60,
+      "image_path": "src/img/pokemon/caninos.png",
+      "sound_path": "src/sounds/caninos.mp3",
+      "color": "orange"
+    },
+    {
+      "id": 10,
+      "name": "Chartor",
+      "pv": 110,
+      "type": "Feu",
+      "attack_damage": 50,
+      "image_path": "src/img/pokemon/chartor.png",
+      "sound_path": "src/sounds/chartor.mp3",
+      "color": "orange"
+    },
+    {
+      "id": 11,
+      "name": "Flamiaou",
+      "pv": 70,
+      "type": "Feu",
+      "attack_damage": 10,
+      "image_path": "src/img/pokemon/flamiaou.png",
+      "sound_path": "src/sounds/flamiaou.mp3",
+      "color": "orange"
+    },
+    {
+      "id": 12,
+      "name": "Psykokwak",
+      "pv": 70,
+      "type": "Eau",
+      "attack_damage": 0,
+      "image_path": "src/img/pokemon/psykokwak.png",
+      "sound_path": "src/sounds/psykokwak.mp3",
+      "color": "blue"
+    },
+    {
+      "id": 13,
+      "name": "Akwakwak",
+      "pv": 90,
+      "type": "Eau",
+      "attack_damage": 20,
+      "image_path": "src/img/pokemon/akwakwak.png",
+      "sound_path": "src/sounds/akwakwak.mp3",
+      "color": "blue"
+    },
+    {
+      "id": 14,
+      "name": "Ptitard",
+      "pv": 60,
+      "type": "Eau",
+      "attack_damage": 10,
+      "image_path": "src/img/pokemon/ptitard.png",
+      "sound_path": "src/sounds/ptitard.mp3",
+      "color": "blue"
+    },
+    {
+      "id": 15,
+      "name": "Tartard",
+      "pv": 150,
+      "type": "Eau",
+      "attack_damage": 30,
+      "image_path": "src/img/pokemon/tartard.png",
+      "sound_path": "src/sounds/tartard.mp3",
+      "color": "blue"
+    },
+    {
+      "id": 16,
+      "name": "Kokiyas",
+      "pv": 60,
+      "type": "Eau",
+      "attack_damage": 10,
+      "image_path": "src/img/pokemon/kokiyas.png",
+      "sound_path": "src/sounds/kokiyas.mp3",
+      "color": "blue"
+    },
+    {
+      "id": 17,
+      "name": "Corayon",
+      "pv": 80,
+      "type": "Eau",
+      "attack_damage": 60,
+      "image_path": "src/img/pokemon/corayon.png",
+      "sound_path": "src/sounds/corayon.mp3",
+      "color": "blue"
+    },
+    {
+      "id": 18,
+      "name": "Bekipan",
+      "pv": 100,
+      "type": "Eau",
+      "attack_damage": 60,
+      "image_path": "src/img/pokemon/bekipan.png",
+      "sound_path": "src/sounds/bekipan.mp3",
+      "color": "blue"
+    },
+    {
+      "id": 19,
+      "name": "Otaquin",
+      "pv": 70,
+      "type": "Eau",
+      "attack_damage": 20,
+      "image_path": "src/img/pokemon/otaquin.png",
+      "sound_path": "src/sounds/otaquin.mp3",
+      "color": "blue"
+    },
+    {
+      "id": 20,
+      "name": "Froussardine",
+      "pv": 30,
+      "type": "Eau",
+      "attack_damage": 10,
+      "image_path": "src/img/pokemon/froussardine.png",
+      "sound_path": "src/sounds/froussardine.mp3",
+      "color": "blue"
+    }
+  ]
+}
