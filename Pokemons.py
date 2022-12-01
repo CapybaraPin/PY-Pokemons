@@ -44,6 +44,9 @@ class Pokemons:
     def getImageLoad(self):
         return self.image_load
 
+    def getSoundPath(self):
+        return self.sound_path
+
     def getColor(self):
         return self.color
 

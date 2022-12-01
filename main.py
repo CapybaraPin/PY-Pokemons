@@ -18,21 +18,25 @@ game.generateTeams()
 print("Equipe A :", game.equipeA)
 print("Equipe B :", game.equipeB)
 
-# Initialisation des ressources graphiques
+# Initialisation des ressources graphiques et sonores
 background = pygame.image.load(game.background())
 button_lunch_img = pygame.image.load('src/img/ui/button_lunch.png').convert_alpha()
 big_logo = pygame.image.load("src/img/big_logo.png")
 input_image = pygame.image.load('src/img/ui/input.png')
+menu_sound = pygame.mixer.music.load('src/sounds/menu.mp3')
 
 # Modification des ressources graphiques
 button_lunch_img = pygame.transform.scale(button_lunch_img, (1206 / 4, 536 / 4))
 button_lunch = Button(670, 800, button_lunch_img, 1, True)
+
+pygame.mixer.music.play()
 
 active = True
 while active:
     window.blit(background, (0,0))
 
     if game.run == False:
+
 
         # Affichage du logo et du slogan
         game.displayText("Attrapez les tous!", 965, 300, 32)
@@ -64,6 +68,7 @@ while active:
         pygame.display.flip()
 
     else:
+
         player = game.player
         def round(player):
 
@@ -133,7 +138,7 @@ while active:
                     if event.type == pygame.KEYDOWN:
                         if event.key == pygame.K_SPACE:
 
-                            game.attack(data_victime[0], data_attack[5])
+                            game.attack(data_victime[0], data_attack[5], data_attack[0])
 
                             game.change_card_vic_id(None)
                             game.change_card_attack_id(None)

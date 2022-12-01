@@ -17,7 +17,7 @@ class GameControl:
         self.card_attack_id = None
         self.card_attack = None
         self.card_normal = None
-        self.card_poisoned = None
+        self.card_poisoned = [None, None]
 
         self.pseudoA = ""
         self.pseudoB = ""
@@ -31,11 +31,15 @@ class GameControl:
         self.enter_pseudoA = True
         self.enter_pseudoB = False
 
-    def displayText(self, texte, x, y, size):
+    def displayText(self, texte, x, y, size, font_name = "poke"):
         """
         L'affichage d'un texte sur pygame étant redondant, cette fonction simplifie fortement la tache.
         """
-        font = pygame.font.Font('src/fonts/Pokemon_Classic.ttf', size)
+        if font_name == "poke":
+            font = pygame.font.Font('src/fonts/Pokemon_Classic.ttf', size)
+        else:
+            font = pygame.font.Font('src/fonts/Kanit-Bold.ttf', size)
+
         texte_affiche = font.render(texte, True, (0, 0, 0))
         texte_rect = texte_affiche.get_rect()
         texte_rect.center = (x, y)
@@ -57,9 +61,9 @@ class GameControl:
                     txt_pv = str(health) + "/" + str(health_max) + " HP"
                     txt_at = str(attack_damages) + " ATQ"
 
-                    self.displayText(txt_pv, 1500, 150 + nb_B, 15)
-                    self.displayText(txt_at, 1500, 150 + 25 + nb_B, 15)
-                    self.displayText(name, 1500, 150 + 50 + nb_B, 15)
+                    self.displayText(txt_pv, 1500, 150 + nb_B, 15, "Kanit")
+                    self.displayText(txt_at, 1500, 150 + 25 + nb_B, 15, "Kanit")
+                    self.displayText(name, 1500, 150 + 50 + nb_B, 15, "Kanit")
 
                     nb_B = nb_B + 200
 
@@ -75,9 +79,9 @@ class GameControl:
                     txt_pv = str(health) + "/" + str(health_max) + " HP"
                     txt_at = str(attack_damages) + " ATQ"
 
-                    self.displayText(txt_pv, 350, 150 + nb_A, 15)
-                    self.displayText(txt_at, 350, 150 + 25 + nb_A, 15)
-                    self.displayText(name, 350, 150 + 50 + nb_A, 15)
+                    self.displayText(txt_pv, 350, 150 + nb_A, 15, "Kanit")
+                    self.displayText(txt_at, 350, 150 + 25 + nb_A, 15, "Kanit")
+                    self.displayText(name, 350, 150 + 50 + nb_A, 15, "Kanit")
 
                     nb_A = nb_A + 200
 
@@ -198,23 +202,58 @@ class GameControl:
                     active = False
                     pygame.quit()
 
-    def attack(self, id_victime, attack_damage):
+    def poisoned(self, card_id = 100):
         """
-        Cette fonction permet d'attaquer une carte.
+        Cette fonction permet d'empoisonné un pokemon pendant 3 tours avec une attack_damage de 10.
         """
+
+        for pk in self.L_pokemons:
+            if pk.getID() == card_id:
+                if self.card_poisoned[0] == None:
+                    self.card_poisoned = [card_id, 1]
+
+    def attack(self, id_victime, attack_damage, id_attack):
+        """
+        Cette fonction permet d'attaquer une carte et de jouer du son.
+        """
+
+        sound = pygame.mixer.Sound(self.L_pokemons[id_attack].getSoundPath())
+        sound.play()
 
         for pk in self.L_pokemons:
             if pk.getID() == id_victime:
 
-                pk.setPV(pk.getPV() - attack_damage)
+                rdm = random.randint(1, 10)
+
+                if rdm == 5:
+                    pk.setPV(pk.getPV() - attack_damage + 20)
+                    print("Coup critique!")
+                else:
+                    pk.setPV(pk.getPV() - attack_damage)
+
+                """
+                if self.card_poisoned == [None, None]:
+
+                    if rdm == 1:
+                        self.poisoned(id_victime)
+                        print("La carte", pk.getName(), "c'est fais empoisonner!")
+                else:
+                    if self.card_poisoned[1] <= 3:
+                        self.L_pokemons[self.card_poisoned[0]].setPV(pk.getPV() - 10)
+                        self.card_poisoned = [self.card_poisoned[0], self.card_poisoned[1] + 1]
+                        print("La carte, viens de perdre 10 pv.")
+                    else:
+                        self.card_poisoned = [None, None]
+                        print("La carte n'est plus empoisonnée!")"""
+
+
+                len_max = len(self.equipeB)
+
+                if len(self.equipeA) > len(self.equipeB):
+                        len_max = len(self.equipeA)
 
                 if pk.getPV() <= 0:
                     pk.setPV(0)
-
-                    len_max = len(self.equipeB)
-
-                    if len(self.equipeA) > len(self.equipeB):
-                        len_max = len(self.equipeA)
 
                     for i in range(len_max):
                         if id_victime in self.equipeA:
