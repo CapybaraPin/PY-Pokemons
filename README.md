@@ -18,3 +18,6 @@ Jeu de combat Pokémon à deux joueurs et au tour par tour, projet scolaire.
 
 3) Executez le fichier **main.py**
 
+
+
+© Hugo ROBLES
